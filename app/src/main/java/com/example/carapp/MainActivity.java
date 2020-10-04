@@ -26,19 +26,25 @@ public class MainActivity extends AppCompatActivity {
 
     GridView gridView;
     ArrayList<Integer> thumbIDs = new ArrayList<>(
-            Arrays.asList(R.drawable.image1, R.drawable.image2, R.drawable.image3)
+            Arrays.asList(R.drawable.thumb1, R.drawable.thumb2, R.drawable.thumb3, R.drawable.thumb4, R.drawable.thumb5, R.drawable.thumb6)
+    );
+    ArrayList<Integer> imageIDs = new ArrayList<>(
+            Arrays.asList(R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image5, R.drawable.image6)
     );
     ArrayList<String> thumbStrings  = new ArrayList<>(
-            Arrays.asList("Toyota Camry", "Toyota Corolla", "Toyota RAV4")
+            Arrays.asList("Toyota Camry", "Toyota Corolla", "Toyota RAV4", "Honda Accord", "Honda Clarity Fuel Cell", "Honda CR-V")
     );
     ArrayList<String> webpages  = new ArrayList<>(
-            Arrays.asList("https://www.toyota.com/camry/", "https://www.toyota.com/corolla/", "https://www.toyota.com/rav4/")
+            Arrays.asList("https://www.toyota.com/camry/", "https://www.toyota.com/corolla/", "https://www.toyota.com/rav4/", "https://automobiles.honda.com/accord", "https://automobiles.honda.com/clarity-fuel-cell", "https://automobiles.honda.com/cr-v")
     );
     ArrayList<ArrayList<String>> dealers = new ArrayList<ArrayList<String>>(
             Arrays.asList(
-                    new ArrayList<String>(Arrays.asList("Chicago Northside Toyota 6042 N Western Ave", "Midtown Toyota 2700 N Cicero Ave", "Toyota On Western 6941 S Western Ave")),
-                    new ArrayList<String>(Arrays.asList("Chicago Northside Toyota 6042 N Western Ave", "Midtown Toyota 2700 N Cicero Ave", "Toyota On Western 6941 S Western Ave")),
-                    new ArrayList<String>(Arrays.asList("Chicago Northside Toyota 6042 N Western Ave", "Midtown Toyota 2700 N Cicero Ave", "Toyota On Western 6941 S Western Ave"))
+                    new ArrayList<String>(Arrays.asList("Chicago Northside Toyota \n6042 N Western Ave", "Midtown Toyota \n2700 N Cicero Ave", "Toyota On Western \n6941 S Western Ave")),
+                    new ArrayList<String>(Arrays.asList("Chicago Northside Toyota \n6042 N Western Ave", "Midtown Toyota \n2700 N Cicero Ave", "Toyota On Western \n6941 S Western Ave")),
+                    new ArrayList<String>(Arrays.asList("Chicago Northside Toyota \n6042 N Western Ave", "Midtown Toyota \n2700 N Cicero Ave", "Toyota On Western \n6941 S Western Ave")),
+                    new ArrayList<String>(Arrays.asList("Honda of Downtown Chicago \n1111 N Clark St #2", "McGrath City Honda \n6720 W Grand Ave.", "Honda City Chicago \n4950 S Pulaski Rd")),
+                    new ArrayList<String>(Arrays.asList("Honda of Downtown Chicago \n1111 N Clark St #2", "McGrath City Honda \n6720 W Grand Ave.", "Honda City Chicago \n4950 S Pulaski Rd")),
+                    new ArrayList<String>(Arrays.asList("Honda of Downtown Chicago \n1111 N Clark St #2", "McGrath City Honda \n6720 W Grand Ave.", "Honda City Chicago \n4950 S Pulaski Rd"))
             )
     );
 
@@ -61,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                         ImageViewActivity.class);
 
                 // Add the ID of the thumbnail to display as an Intent Extra
-                intent.putExtra("thumbIDs", thumbIDs);
+                intent.putExtra("imageIDs", imageIDs);
                 intent.putExtra(EXTRA_RES_ID, (int) position);
                 intent.putExtra("webpage", webpages.get(position));
 
@@ -93,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                         ImageViewActivity.class);
 
                 // Add the ID of the thumbnail to display as an Intent Extra
-                intent.putExtra("thumbIDs", thumbIDs);
+                intent.putExtra("imageIDs", imageIDs);
                 intent.putExtra(EXTRA_RES_ID, (int) info.position);
                 intent.putExtra("webpage", webpages.get(info.position));
 

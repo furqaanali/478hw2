@@ -26,8 +26,8 @@ public class ImageViewActivity extends Activity {
         ImageView imageView = new ImageView(getApplicationContext());
 
         // Get the ID of the image to display and set it as the image for this ImageView
-        ArrayList<Integer> thumbIDs = intent.getIntegerArrayListExtra("thumbIDs");
-        imageView.setImageResource(thumbIDs.get(intent.getIntExtra(MainActivity.EXTRA_RES_ID, 0)));
+        ArrayList<Integer> imageIDs = intent.getIntegerArrayListExtra("imageIDs");
+        imageView.setImageResource(imageIDs.get(intent.getIntExtra(MainActivity.EXTRA_RES_ID, 0)));
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
