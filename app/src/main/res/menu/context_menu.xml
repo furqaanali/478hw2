@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/viewImageMenuItem"
+        android:title="View Full Image"/>
+    <item
+        android:id="@+id/viewWebpageMenuItem"
+        android:title="Visit Manufacturer's Page"/>
+    <item
+        android:id="@+id/viewDealershipsMenuItem"
+        android:title="View Dealerships"/>
+
+</menu>
