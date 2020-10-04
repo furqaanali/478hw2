@@ -34,6 +34,13 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<String> webpages  = new ArrayList<>(
             Arrays.asList("https://www.toyota.com/camry/", "https://www.toyota.com/corolla/", "https://www.toyota.com/rav4/")
     );
+    ArrayList<ArrayList<String>> dealers = new ArrayList<ArrayList<String>>(
+            Arrays.asList(
+                    new ArrayList<String>(Arrays.asList("Chicago Northside Toyota 6042 N Western Ave", "Midtown Toyota 2700 N Cicero Ave", "Toyota On Western 6941 S Western Ave")),
+                    new ArrayList<String>(Arrays.asList("Chicago Northside Toyota 6042 N Western Ave", "Midtown Toyota 2700 N Cicero Ave", "Toyota On Western 6941 S Western Ave")),
+                    new ArrayList<String>(Arrays.asList("Chicago Northside Toyota 6042 N Western Ave", "Midtown Toyota 2700 N Cicero Ave", "Toyota On Western 6941 S Western Ave"))
+            )
+    );
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,10 +107,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 return true;
 
-//            case R.id.viewDealershipsMenuItem:
-//                intent = new Intent(MainActivity.this, DealershipList.class);
-//                intent.putExtra("dealerships", dealers.get(info.position));
-
+            case R.id.viewDealershipsMenuItem:
+                intent = new Intent(MainActivity.this, DealershipList.class);
+                intent.putExtra("dealerships", dealers.get(info.position));
+                startActivity(intent);
+                return true;
 
             default:
                 return false;
